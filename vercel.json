@@ -25,5 +25,7 @@
         "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "cookie",
         "CACHE_STORE": "array"
-    }
+    },
+    "buildCommand": "npm run build",
+    "outputDirectory": "public"
 }
