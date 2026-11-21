@@ -1,0 +1,9 @@
+﻿/vendor
+/node_modules
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+storage/*.sqlite
+database/database.sqlite
