@@ -60,3 +60,18 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Dashboard Preview
 ![Collabspace Dashboard](docs/dashboard.png)
+
+## REST API Reference
+
+Base URL: `/api/v1` (also available under `/api`). Authenticate requests using `Authorization: Bearer <token>` obtained from `POST /api/v1/auth/login` or `POST /api/v1/auth/register`.
+
+- **Auth**: `POST /api/v1/auth/register`, `POST /api/v1/auth/login`, `GET /api/v1/auth/me`, `POST /api/v1/auth/logout`
+- **Dashboard & AI**: `GET /api/v1/dashboard`, `POST /api/v1/dashboard/ask-ai`
+- **Projects & Wiki**: `GET/POST /api/v1/projects`, `GET/PUT/PATCH/DELETE /api/v1/projects/{id}`, `PATCH /api/v1/projects/{id}/wiki`
+- **Tasks & Status**: `GET/POST /api/v1/tasks`, `GET/PUT/PATCH/DELETE /api/v1/tasks/{id}`, `PATCH /api/v1/tasks/{id}/status`
+- **Files**: `GET/POST /api/v1/files`, `GET/DELETE /api/v1/files/{id}`
+- **Chats & Messages**: `GET/POST /api/v1/chats`, `GET/POST /api/v1/chats/{id}/messages`
+- **Meetings & AI Summary**: `GET/POST /api/v1/meetings`, `GET/PUT/PATCH/DELETE /api/v1/meetings/{id}`, `POST /api/v1/meetings/{id}/ai-summary`
+- **Daily Updates, Reports, Notifications & Profile**: `GET/POST /api/v1/daily-updates`, `GET/POST /api/v1/reports`, `GET /api/v1/notifications`, `PATCH /api/v1/notifications/{id}/read`, `POST /api/v1/notifications/read-all`, `GET/PATCH /api/v1/profile`, `GET /api/v1/users`
+
+Postman Collection: `Collabspace_Postman_Collection.json`

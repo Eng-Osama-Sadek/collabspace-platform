@@ -1,0 +1,226 @@
+{
+    "info": {
+        "name": "Collabspace Business APIs (v1)",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://127.0.0.1:8000/api/v1"
+        },
+        {
+            "key": "token",
+            "value": ""
+        }
+    ],
+    "item": [
+        {
+            "name": "Auth - Login",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "{{base_url}}/auth/login",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "auth",
+                        "login"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"email\": \"admin@collabspace.local\",\n    \"password\": \"password\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Dashboard Overview",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "{{base_url}}/dashboard",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "dashboard"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Projects - List",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "{{base_url}}/projects",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "projects"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Projects - Create",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "{{base_url}}/projects",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "projects"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\": \"API Launch Project\",\n    \"priority\": \"high\",\n    \"status\": \"active\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Tasks - List",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "{{base_url}}/tasks",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "tasks"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Tasks - Update Status",
+            "request": {
+                "method": "PATCH",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "{{base_url}}/tasks/1/status",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "tasks",
+                        "1",
+                        "status"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"status\": \"done\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Meetings - Generate AI Summary",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "{{base_url}}/meetings/1/ai-summary",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "meetings",
+                        "1",
+                        "ai-summary"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"transcript\": \"Reviewed sprint milestones. Assigned API QA tasks.\"\n}"
+                }
+            }
+        }
+    ]
+}
